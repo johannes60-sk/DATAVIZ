@@ -1,0 +1,477 @@
+<h1 id="visualisation-de-donn-es-tableau">Visualisation de données - Tableau</h1>
+<h2 id="introduction-et-donn-es">Introduction et données</h2>
+<p>Dans ce TP guidé, nous allons aborder l&#39;utilisation du logiciel <a href="https://www.tableau.com/fr-fr"><strong>Tableau</strong></a>, outil phare dans le domaine de la <strong>BI</strong> ent de la <strong>Visualisation de données</strong>.</p>
+<p>Il est préférable de travailler sur la version publique de <strong>Tableau</strong> (Tableau Public) pour que vous puissiez me transmettre le lien de votre <code>DataViz</code> pour l&#39;évaluation.</p>
+<p>Dans cette présentation de l&#39;outil, nous allons utiliser les données synthétiques de la production scientifique mondiale de 1996 à l&#39;année précédente (<a href="./data/scimagojr.xlsx">lien vers le fichier Excel</a> - source : <a href="http://www.scimagojr.com/help.php">SCImago Journal &amp; Country Rank</a>)</p>
+<p>Ce fichier comporte les variables suivantes :</p>
+<ul>
+<li><code>Year</code> : année</li>
+<li><code>Rank</code> : rang du pays en terme de production (par rapport au nombre de documents) pour l&#39;année indiquée</li>
+<li><code>Country</code> : pays</li>
+<li><code>Documents</code> : nombre de documents produits</li>
+<li><code>Citable.documents</code> : nombre de documents citables (articles, reviews et conférences)</li>
+<li><code>Citations</code> : nombre de citations de documents produits</li>
+<li><code>Self.Citations</code> : nombre de citations dans un document du même pays</li>
+<li><code>Citations.per.Document</code> : nombre moyen de citations</li>
+<li><code>H.index</code> : nombre <em>h</em> d&#39;articles ayant eu au moins <em>h</em> citations (pour plus d&#39;information : <a href="https://fr.wikipedia.org/wiki/Indice_h">h-index sur Wikipedia</a>)</li>
+</ul>
+<h2 id="premi-re-r-alisation">Première réalisation</h2>
+<p>Voici les différentes étapes à suivre pour réaliser une première dataviz assez complète sur ces données :</p>
+<h3 id="importation-des-donn-es-dans-tableau-">Importation des données dans <strong>Tableau</strong></h3>
+<ul>
+<li>Fichier Excel puis choisir le fichier</li>
+</ul>
+<h3 id="v-rification-des-donn-es-type-particuli-rement-">Vérification des données (type particulièrement)</h3>
+<ul>
+<li><p>Toutes sont des numériques (symbole <code>#</code> au dessus du nom des variables)</p>
+</li>
+<li><p>Sauf <code>Country</code>, avec un symbole représentant une terre, qui indique que c&#39;est une variable géographique</p>
+</li>
+</ul>
+<h3 id="premi-re-feuille-et-premier-tableau-production-scientifique-">Première <strong>Feuille</strong> et premier tableau : <em>Production scientifique</em></h3>
+<ul>
+<li><p>Cliquer sur <em>Feuille 1</em> en bas à gauche</p>
+</li>
+<li><p>Double-cliquer sur <code>Documents</code>, dans les <strong>Mesures</strong></p>
+</li>
+<li><p>Cliquer sur le tableau dans la partie <strong>Montre moi</strong> (en haut à droite)</p>
+</li>
+<li><p>Glisser et Déplacer <code>Country</code> (dans les <strong>Dimensions</strong>) dans la partie pour les lignes</p>
+</li>
+<li><p>Faire un clic droit dans la zone au-dessus des valeurs obtenues puis choisir le tri dans l&#39;ordre décroissant</p>
+</li>
+<li><p>Faire un clic droit sur <code>Country</code> dans le tableau et choisir <em>Filtre...</em></p>
+<ul>
+<li>Cliquer sur <em>Premiers</em>, choisir <em>Par champs</em> puis <em>OK</em></li>
+</ul>
+</li>
+<li><p>Double-cliquer sur l&#39;onglet <em>Feuille 1</em> en bas pour changer le titre de la feuille (<em>TOP 10</em> par exemple)</p>
+</li>
+<li><p>Double-cliquer sur le titre <em>&quot;Feuille 1&quot;</em> en haut pour le changer, si vous souhaitez en avoir un spécifique par rapport au nom de la feuille</p>
+</li>
+</ul>
+<blockquote>
+<p>On a un TOP 10 des pays sur leur production scientifique sur la période analysée</p>
+</blockquote>
+<h3 id="deuxi-me-feuille-et-premier-graphique-evolution-de-la-production-scientifique-">Deuxième feuille et premier graphique : <em>Evolution de la production scientifique</em></h3>
+<ul>
+<li><p>Cliquer, dans le menu, sur <em>Feuille de calcul</em> puis <em>Nouvelle feuille de calcul</em>, ou cliquer en bas de la fenêtre sur le <code>+</code> avec l&#39;icône d&#39;un graphique</p>
+</li>
+<li><p>Double-cliquer sur <code>Documents</code>, puis sur <code>Year</code></p>
+</li>
+<li><p>Dans la partie à gauche, cliquer sur <strong>Analyse</strong></p>
+<ul>
+<li><p>Faire un Glisser/Déplacer de <em>Ligne de constante</em> dans le graphique</p>
+</li>
+<li><p>Choisir la case pour <code>Year</code> et indiquer l&#39;année 2002</p>
+</li>
+<li><p>Avec un clic droit sur la ligne, il est possible de la modifier (type de ligne, couleur, étiquette, ...)</p>
+</li>
+</ul>
+</li>
+<li><p>Faire de même pour 2015</p>
+</li>
+<li><p>Toujours dans <strong>Analyse</strong></p>
+<ul>
+<li><p>Faire un Glisser/Déplacer de <em>Ligne de moyenne</em> maintenant</p>
+</li>
+<li><p>Sélectionner le croisement <code>SOMME ...</code> et <em>Table</em></p>
+</li>
+<li><p>Nous avons maintenant une ligne représentant la production scientifique annuelle moyenne (toujours autant modifiable)</p>
+</li>
+</ul>
+</li>
+<li><p>Changer aussi le titre de la feuille (<em>Evolution mondiale</em> par exemple)</p>
+</li>
+<li><p>Changer le titre (idem que précédement)</p>
+</li>
+</ul>
+<blockquote>
+<p>On a l&#39;évolution de la production scientifique mondiale sur la période analysée</p>
+</blockquote>
+<h3 id="premier-tableau-de-bord-synth-se-de-la-production-scientifique-mondiale-">Premier <strong>Tableau de bord</strong> : <em>Synthèse de la production scientifique mondiale</em></h3>
+<ul>
+<li><p>Cliquer <em>Tableau de bord</em> puis <em>Nouveau Tableau de Bord</em> dans le menu, ou sur l&#39;icône en bas avec un <code>+</code> et un quadrillage</p>
+</li>
+<li><p>Glisser/Déplacer chacune des feuilles précédemment créées en les sélectionnant dans la partie gauche</p>
+</li>
+<li><p>Le jeu est ici de faire des Glisser/Déplacer pour avoir l&#39;organisation que l&#39;on souhaite</p>
+</li>
+<li><p>Il est possible d&#39;ajouter des images, des pages web ou du texte (cf <em>Objets</em> dans le menu à gauche)</p>
+<ul>
+<li>Ajouter un petit texte explicatif du résultats éventuellement</li>
+</ul>
+</li>
+<li><p>Il est aussi possible de modifier la taille du tableau de bord</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons notre premier tableau de bord</p>
+</blockquote>
+<ul>
+<li><p>Revenir sur le <code>TOP</code> pour avoir les <code>20</code> premiers pays</p>
+</li>
+<li><p>Examinez sur le tableau de bord que la modification a été prise en compte</p>
+</li>
+</ul>
+<h3 id="troisi-me-feuille-et-premi-re-carte-cartographie-de-la-production-scientifique-">Troisième feuille et première carte : <em>Cartographie de la production scientifique</em></h3>
+<ul>
+<li><p>Créer une nouvelle feuille</p>
+</li>
+<li><p>Double-cliquer sur <code>Country</code></p>
+<ul>
+<li>une carte doit apparaître avec des points</li>
+</ul>
+</li>
+<li><p>Dans le menu <strong>Montre-moi</strong>, choisir la carte avec les continents en couleurs</p>
+<ul>
+<li>nous avons une carte <em>choroplèthe</em></li>
+</ul>
+</li>
+<li><p>Double-cliquer sur <code>Documents</code></p>
+<ul>
+<li>les pays sont maintenant avec une couleur en fonction de leur production scientifique</li>
+</ul>
+</li>
+<li><p>Nous avons une carte choroplèthe indiquant la production scientifique des pays</p>
+</li>
+<li><p>Glisser/Déplacer <code>Citations</code> dans l&#39;icône <strong>infobulle</strong> dans <strong>Repères</strong></p>
+</li>
+<li><p>Faire de même avec <code>H.index</code></p>
+<ul>
+<li>Faire un clic droit sur la zone <code>SOMME(H.index)</code>, et choisir <code>Mesure (somme)</code> puis <code>Moyenne</code></li>
+</ul>
+</li>
+<li><p>En pointant la souris sur un pays, nous avons aussi le nombre total de citations et le <em>H index</em> moyen annuel</p>
+<ul>
+<li>Cliquer sur <em>Infobulle</em> pour personnaliser l&#39;affichage</li>
+</ul>
+</li>
+<li><p>Changer le titre de la feuille (<em>cartographie</em> par exemple) et du graphique si vous le souhaitez</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons notre première carte choroplèthe</p>
+</blockquote>
+<h3 id="quatri-me-feuille-evolution-de-la-contribution-des-plus-importants-pays-">Quatrième feuille : <em>Evolution de la contribution des plus importants pays</em></h3>
+<ul>
+<li><p>Créer une nouvelle feuille</p>
+</li>
+<li><p>Glisser/Déplacer <code>Country</code> sur les lignes</p>
+</li>
+<li><p>Idem sur <em>Filtres</em></p>
+<ul>
+<li>Choisir les 10 premiers sur la production totale de documents</li>
+</ul>
+</li>
+<li><p>Glisser/Déplacer <code>Year</code> dans les colonnes</p>
+<ul>
+<li><p>Clic sur la flèche à droite de <em>Year</em> dans les colonnes et choisir <em>Discret</em></p>
+</li>
+<li><p>On a maintenant un tableau</p>
+</li>
+</ul>
+</li>
+<li><p>Double-cliquer sur <code>Documents</code></p>
+</li>
+<li><p>Dans <em>Analyse</em> (dans le menu), choisir  <em>Pourcentage de</em> puis <em>colonnes</em></p>
+</li>
+<li><p>Dans <strong>Montrez-moi</strong>, choisir les diagrammes en barres empilées</p>
+</li>
+<li><p>Changer le titre et le nom de la feuille</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons l&#39;évolution de la contribution des 10 plus gros pays producteurs scientifiques (un peu biaisé ici, car c&#39;est la répartition entre les 10, mais c&#39;est révélateur tout de même)</p>
+</blockquote>
+<p>On peut ajuster l&#39;ordre des pays en fonction de leur production scientifique :</p>
+<ul>
+<li><p>Dans la légende à droite, cliquer sur la flèche à côté de <code>Country</code>, puis sur <em>Trier</em></p>
+</li>
+<li><p>Choisir <em>Champ</em>, <em>Ordre décroissant</em>, <code>Documents</code> comme nom du champ et <em>Somme</em> pour l&#39;agrégation</p>
+</li>
+<li><p>Fermer la fenêtre</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons maintenant les 10 pays triés par ordre décroissant </p>
+</blockquote>
+<h3 id="cinqui-me-feuille-evolution-par-pays-en-base-100-">Cinquième feuille : <em>Evolution par pays, en base 100</em></h3>
+<ul>
+<li><p>Faire un clic-droit sur la deuxième feuille créée (celle avec l&#39;évolution de la production scientifique), puis choisir <em>Dupliquer</em></p>
+</li>
+<li><p>Glisser/Déplacer la feuille (nommée <em>Feuille 5</em> normalement), après les autres</p>
+</li>
+<li><p>Supprimer la ligne horizontale indiquant la moyenne</p>
+</li>
+<li><p>Glisser/Déplacer <code>Country</code> sur <em>Couleurs</em> (dans <em>Repères</em>)</p>
+<ul>
+<li><p>Il y a trop de pays pour tous les afficher</p>
+</li>
+<li><p>Choisir <em>Filtrer puis ajouter</em></p>
+</li>
+<li><p>Chercher et ajouter les pays suivants : </p>
+<ul>
+<li><p><code>United States</code></p>
+</li>
+<li><p><code>France</code></p>
+</li>
+<li><p><code>China</code></p>
+</li>
+<li><p><code>Germany</code></p>
+</li>
+<li><p><code>United Kingdom</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Cliquer sur la fenêtre à droite de <code>SOMME(Documents)</code> dans <em>Lignes</em></p>
+<ul>
+<li><p>Choisir <em>Ajouter un calcul de table</em></p>
+</li>
+<li><p>Dans le <em>Type de calcul</em>, sélectionner <em>Pourcentage de</em></p>
+</li>
+<li><p>Dans la partie <em>En rapport avec</em>, choisir <em>Premier</em>, puis fermer la fenêtre</p>
+</li>
+</ul>
+</li>
+<li><p>Modifier le nom de la feuille (<em>Base100</em> par exemple) et le titre si vous le souhaitez</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons les évolutions en base 100 des 5 pays sur la période analysée</p>
+</blockquote>
+<ul>
+<li><p>Cliquer sur la flèche à droite de <code>Country</code> dans <em>Filtres</em></p>
+<ul>
+<li>Choisir <em>Afficher le filtre</em></li>
+</ul>
+</li>
+<li><p>Il est maintenant possible de choisir les pays à afficher dans le graphique</p>
+<ul>
+<li><p>Regarder l&#39;évolution impressionnante de certains pays tels que :</p>
+<ul>
+<li><p><code>North Korea</code></p>
+</li>
+<li><p><code>Macao</code></p>
+</li>
+<li><p><code>Montenegro</code></p>
+</li>
+<li><p><code>Afghanistan</code></p>
+</li>
+<li><p><code>Iraq</code></p>
+</li>
+<li><p><code>Iran</code></p>
+</li>
+<li><p><code>Qatar</code></p>
+</li>
+<li><p><code>Indonesia</code></p>
+</li>
+<li><p>...</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="sixi-me-feuille-top-par-ann-e-taille-variable-">Sixième feuille : <em>TOP par année, à taille variable</em></h3>
+<ul>
+<li><p>Créer une nouvelle feuille</p>
+</li>
+<li><p>Glisser/Déplacer <code>Country</code> dans les <em>Lignes</em></p>
+</li>
+<li><p>Double-cliquer sur <code>Valeurs de mesures</code> dans les <strong>Mesures</strong> en bas</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons ainsi pour chaque pays un agrégat calculé (somme par défaut) pour chaque mesure</p>
+</blockquote>
+<ul>
+<li><p>Dans la colonne <em>Documents</em>, cliquer sur le petit icône de tri à droite du nom de colonne, pour trier par ordre décroissant du nombre de documents</p>
+</li>
+<li><p>Faire un clic-droit dans le vide du panneau de gauche et choisir <em>Créer un paramètre...</em></p>
+<ul>
+<li><p>Nommer le <code>pChoixAnnee</code></p>
+</li>
+<li><p>Choisir <em>Entier</em> comme type et cliquer sur <em>Plage</em> pour définir la plage de valeurs possibles </p>
+</li>
+<li><p>Plutôt que de chercher les années min et max, nous pouvons les récupérer directement. Cliquer sur <em>Définir des valeurs depuis</em> et sélectionner <code>Year</code></p>
+</li>
+<li><p>Choisir <code>2020</code> comme valeur actuelle puis cliquer sur <em>OK</em></p>
+</li>
+</ul>
+</li>
+<li><p>Faire un clic-droit dans le vide du panneau de gauche et choisir <em>Créer un champs calculé...</em> et nommer-le <code>cChoixAnnee</code></p>
+<ul>
+<li>Entrer la formule suivante dans le cadre dédié <pre><code><span class="hljs-keyword">IF</span> ([<span class="hljs-built_in">Year</span>] = [pChoixAnnee]) <span class="hljs-keyword">THEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">ELSE</span> <span class="hljs-number">0</span> <span class="hljs-keyword">END</span>
+</code></pre></li>
+<li><p>Faire un clic sur la flèche à droite du champ <code>Choix année</code> et cliquer sur <em>Convertir en dimension</em></p>
+</li>
+<li><p>Glisser-déplacer cette dimension dans le panneau <em>Filtres</em></p>
+<ul>
+<li>Sélectionner la valeur 1 et cliquer sur <em>OK</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pour afficher le contrôle du paramètre, cliquer sur la flèche à droite du paramètre dans le panneau de gauche et choisir <em>Afficher le paramètre</em></p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons maintenant le tableau par année choisie</p>
+</blockquote>
+<p>Si vous faîtes comme pour le premier tableau pour avoir les 10 premiers, vous verrez les 10 premiers sont sélectionnés sur l&#39;ensemble des années. Par exemple, l&#39;Espagne est dans le TOP 10 pour 2018, alors que cette année-la, elle est 12ème. Il va donc falloir créer une mesure calculée.</p>
+<ul>
+<li><p>Créer un nouveau champs calculé, nommé <code>cDocumentsAnneeChoisie</code></p>
+<ul>
+<li>La formule est la suivante<pre><code><span class="hljs-keyword">IF</span> ([<span class="hljs-built_in">Year</span>] = [pChoixAnnee]) <span class="hljs-keyword">THEN</span> [Documents] <span class="hljs-keyword">ELSE</span> <span class="hljs-number">0</span> <span class="hljs-keyword">END</span>
+</code></pre></li>
+</ul>
+</li>
+<li><p>Ajouter <code>Country</code> dans la partie <em>Filtres</em></p>
+<ul>
+<li><p>Dans l&#39;onglet <em>Premiers</em>, vous choisissez <em>Par champs</em></p>
+</li>
+<li><p>Vous pouvez sélectionner le champs <code>cDocumentsAnneeChoisie</code> créé</p>
+</li>
+<li><p>Indiquez <code>20</code> pour la taille du TOP</p>
+</li>
+</ul>
+</li>
+<li><p>Modifier le titre de la feuille et du tableau si vous le souhaitez</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons bien maintenant un TOP10 par année, celle-ci étant choisie par l&#39;utilisateur</p>
+</blockquote>
+<ul>
+<li><p>On peut faire aussi du tri dans les mesures présentées </p>
+<ul>
+<li><p>Placer <code>Rank</code> et <code>Documents</code> en premier (par Glisser/Déplacer)</p>
+<ul>
+<li>si par mégarde, vous le supprimiez, vous pouvez le remettre (toujours par Glisser/Déplacer)</li>
+</ul>
+</li>
+<li><p>Supprimer <code>Citable documents</code>, <code>Citations per document</code>, <code>Self citations</code>, <code>Nombre d&#39;enregistrements</code>, <code>cDocumentsAnneeChoisie</code></p>
+</li>
+</ul>
+</li>
+<li><p>Pour modifier le titre du contrôle de paramètre, cliquer sur la flèche à droite de celui-ci</p>
+<ul>
+<li><p>Cliquer sur <em>Modifier le titre</em></p>
+</li>
+<li><p>Mettez le texte que vous souhaitez (<em>Année choisie</em> par exemple)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="premi-re-histoire-analyse-de-la-production-scientifique-">Première <strong>Histoire</strong> : <em>Analyse de la production scientifique</em></h3>
+<ul>
+<li><p>Cliquer sur <em>Histoire</em>, puis <em>Nouvelle Histoire</em> dans le menu, ou sur l&#39;icône avec un <code>+</code> sur un livre en bas</p>
+</li>
+<li><p>Changer le titre et le nom de l&#39;histoire</p>
+</li>
+<li><p>Glisser/Déplacer le tableau de bord dans le cadre prévu</p>
+</li>
+<li><p>Double-cliquer sur <em>Ajouter une légende</em> pour ajouter un texte présentant le tableau de bord</p>
+</li>
+<li><p>Cliquer sur <em>Nouveau plan du reportage</em> &gt; <strong>Vide</strong> (à gauche)</p>
+<ul>
+<li><p>Glisser la carte</p>
+</li>
+<li><p>Ajouter une légende</p>
+</li>
+<li><p>Si on souhaite cacher la légende de couleurs, qui n&#39;a que peu d&#39;intérêt ici, retourner sur la feuille correspondant à la carte</p>
+<ul>
+<li><p>Cliquer dans le menu sur <em>Analyse</em>, puis <em>Légendes</em> et décocher <em>Légende des couleurs</em></p>
+</li>
+<li><p>retourner sur l&#39;histoire pour voir que la légende a bien été enlevée</p>
+</li>
+</ul>
+</li>
+<li><p>Idem, on peut recadrer la carte si on le souhaite (toujours dans la feuille)</p>
+</li>
+</ul>
+</li>
+<li><p>Ajouter la répartition de la production scientifique des 10 pays les plus productifs</p>
+</li>
+<li><p>Idem pour l&#39;évolution en base 100 et pour le TOP par année (dans deux plans différents)</p>
+</li>
+</ul>
+<blockquote>
+<p>Nous avons notre première <em>story</em>, permettant aux utilisateurs d&#39;explorer les données.</p>
+</blockquote>
+<h3 id="au-final">Au final</h3>
+<p>Vous devriez avoir à la fin quelque chose proche de ce résultat :</p>
+<div style="text-align: center;">
+
+<img src="./../assets/plot.png" alt="Plot Tableau Publique">
+
+</div>
+
+
+<h3 id="r-aliser-les-feuilles-suivantes-">Réaliser les <em>feuilles</em> suivantes :</h3>
+<ul>
+<li><p>Le nuage de points entre le nombre moyen de documents produits par an et le nombre moyen de citations par an, pour chaque pays, avec</p>
+<ul>
+<li><p>le nom de chaque pays indiqué sur le graphique</p>
+</li>
+<li><p>une couleur (entre du vert pour le 1er et du rouge pour le dernier) par pays en fonction de son rang médian</p>
+</li>
+<li><p>une taille en fonction du <em>H-index</em> moyen</p>
+</li>
+<li><p>deux lignes de références au niveau des moyennes de chaque variable</p>
+</li>
+<li><p>des axes logarithmiques</p>
+</li>
+</ul>
+</li>
+<li><p>Une représentation graphique de l&#39;évolution des rangs des pays, uniquement sur les 10 premiers rangs, avec le pays en 1er en haut, avec</p>
+<ul>
+<li><p>une couleur par pays</p>
+</li>
+<li><p>le nom de chaque pays sur le graphique</p>
+</li>
+</ul>
+</li>
+<li><p>Une carte des pays dont le <em>H-index</em> moyen est supérieur à une valeur choisie par l&#39;utilisateur, avec</p>
+<ul>
+<li><p>valeurs dans le domaine des valeurs possibles pour cet indice,</p>
+</li>
+<li><p>la couleur des pays dépendante de la valeur de l&#39;indice, avec une échelle de couleur fixe</p>
+</li>
+</ul>
+</li>
+<li><p>Une carte des pays représentant le <code>TOP</code> réalisé plus haut avec</p>
+<ul>
+<li><p>une sélection des pays identique à celle du <code>TOP</code></p>
+</li>
+<li><p>idem pour l&#39;année</p>
+</li>
+<li><p>une couleur dépendante du nombre de documents produits</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="de-plus-r-aliser-">De plus, réaliser :</h3>
+<ul>
+<li><p>Un <em>dashboard</em> intégrant le TOP et la dernière carte, avec</p>
+<ul>
+<li><p>le contrôle du nombre de pays, sous forme de <em>radio button</em> (bouton rond avec sélection unique)</p>
+</li>
+<li><p>le contrôle de l&#39;année, sous forme de <em>slider</em></p>
+</li>
+</ul>
+</li>
+<li><p>Une <em>story</em> regroupant tous ces éléments de manière cohérente</p>
+</li>
+</ul>
+<h3 id="modifier-les-feuilles-">Modifier les <em>feuilles</em></h3>
+<ul>
+<li>Modifier la feuille <strong>Contribution</strong> (4ème) en ajoutant la production des autres pays (dans une modalité <em>Autres</em>)</li>
+</ul>
+<h3 id="evaluation">Evaluation</h3>
+<ul>
+<li>Veuillez ajouter le lien vers votre dataviz (Tableau Public) sur <code>google Classroom</code>, le devoir <code>TABLEAU</code>: <a href="https://classroom.google.com/c/NjI3Nzc5ODgxNjQ5?cjc=ew2enjf">https://classroom.google.com/c/NjI3Nzc5ODgxNjQ5?cjc=ew2enjf</a></li>
+</ul>
