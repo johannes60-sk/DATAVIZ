@@ -12,5 +12,5 @@
 
 ## Remarque
 
-- Les 3 TPs seront évalués, la meilleure note sera prise en considération. 
+- Les 2 premiers TPs seront évalués, la meilleure note sera prise en considération. 
   
