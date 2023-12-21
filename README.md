@@ -4,10 +4,10 @@
 
 
 - [TP D3.js](./D3/)
+- [TP TABLEAU](./TABLEAU)
 
 - Coming Soon :
-
-  - [TP TABLEAU](./TABLEAU)
+  
   - [TP R](./R)
 
 ## Remarque
